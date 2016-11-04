@@ -1,4 +1,5 @@
 // User storage
+//добавляем глобальную переменную-счетчик для идентификатора поль-ля
 var id = 1;
 
 var users = [
@@ -27,7 +28,7 @@ var users = [
 
 function addUser() {
 	var user = {};
-	user.id = ++id;
+	user.id = ++id; //Добавляем новый ключ id
 	user.firstName = prompt('Введите имя:');
 	user.lastName = prompt('Введите фамилию:');
 	user.birthDay = prompt('Дату рождения:');
@@ -49,6 +50,7 @@ function csvFormat() {
   }).join('\r\n');
 }
 
+//Функция удаления пользователя по id
 function delUser(delid) {
 	users.forEach(function(user) {
 		if (user.id == delid) {
